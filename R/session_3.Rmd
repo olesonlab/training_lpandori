@@ -1,0 +1,103 @@
+---
+title: "Session 3"
+author: "L Pandori"
+date: "7/8/2021"
+output: html_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+
+# specify general options for all of the subsequent chunks in document
+# knitr:opts_chunk() sets default options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Rmd Challenge
+
+*To get quick reference (help --\> md quick ref, will show up in help window)*
+
+top header is called YAML (yet another markdown language)
+
+can customize in header
+
+| Col1   | Col2      | Col3         |
+|--------|-----------|--------------|
+| Part 1 | Tea       | Coffee       |
+| Part 2 | Spaghetti | Tacos        |
+| Part 3 | Costco    | Trader Joe's |
+
+# header 1
+
+## header 2
+
+### header 3
+
+#### header 4
+
+# schedule
+
+1.  make coffee
+2.  eat food
+3.  take a nap
+
+# schedule unstructured
+
+-   make coffee
+-   eat food
+-   take a nap
+
+visual editor works well (A/compass symbol in UL)
+
+To insert citation, insert --\> citation (get doi)
+
+[@pandori2019]
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Create new chunk
+keyboard shortcut (mac = command+alt+i, windows = ctrl+alt+i)
+
+include = false (no code, no result)
+echo = false (no code, yes result)
+
+challenge results
+  - copy + paste into console (fig shows up in plots window)
+
+
+  - command return - shows up in box below chunk
+  - green arrow - shows up in box below chunk
+
+```{r new chunk}
+library(ggplot2)
+library(tidyr)
+
+ggplot(data = cars,
+       mapping = aes(x = speed, y = dist)) + 
+  geom_point() + 
+  geom_smooth(method = 'lm') + 
+  theme_classic()
+  
+```
+
+
+
+

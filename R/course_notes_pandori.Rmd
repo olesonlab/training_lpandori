@@ -1,0 +1,32 @@
+---
+title: "CourseNotes"
+author: "L Pandori"
+date: "7/8/2021"
+output: html_document
+---
+
+## 1 - Intro & Set-Up
+
+-   Use projects
+-   Relative paths not absolute paths
+
+## 2 - Documenting & Publishing Data
+
+-   Invest time in quality metadata
+-   Check out standards/best practices pubs
+-   Note to self: check out IRMA requirements & put on FY22 schedule
+-   Write abstract for data, not for paper
+-   EML package in R to create metadata
+
+## 3 - Rmd
+
+-   Question: how to edit with collaborators not in GitHub/Git
+-   # of "\#" indicate level of headings
+-   echo = FALSE (no code, yes result)
+-   include = FALSE (no code, no result)
+
+## 4 - Git
+
+- folder = repo (repo is project folder)
+- git creates version history of repo
+

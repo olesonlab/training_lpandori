@@ -1,0 +1,60 @@
+---
+title: "session_3.1.5"
+author: "L Pandori"
+date: "7/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(readr)
+library(tidyr)
+library(ggplot2)
+
+```
+
+## Introduction
+
+Data description: North Pole Environmental Bottle Chemistry data from April/May 2000-2014. Data sourced from CTD-O2 system to measure conductivity, temp, depth, DO and Niskin bottle samples for salinity, O2 isotopes, TA, and nutrients.\
+
+### Read in data
+
+Data source: <https://arcticdata.io/catalog/view/doi:10.18739/A25T3FZ8X>
+
+```{r import data, warning = FALSE, message = FALSE}
+# "../" tells computer to go back levels of org in files, use tab to see options
+
+# working directory is where rmd is stored
+
+bg_chem <- read_csv('../data/BGchem2008data.csv')
+
+```
+
+## Analysis
+
+### Calculate summary stats
+
+```{r}
+nitrate <- mean(bg_chem$NO3)
+nitrite <- mean(bg_chem$NO2)
+ammonium <- mean(bg_chem$NH4)
+phos <- mean(bg_chem$P)
+```
+
+Mean nitrate value is `r nitrate`.
+Mean nitrite value is `r nitrite`.
+
+### Calculate mean Redfield Ratio
+
+```{r}
+ratio <-(nitrate + nitrite + ammonium)/phos
+```
+
+The redfield ratio is approximately `r round(ratio)`. 
+
+### Plot Redfield Ratio
+
+```{r}
+plot(bg_chem$P, bg_chem$NO2 + bg_chem$NO3 + bg_chem$NH4)
+```
