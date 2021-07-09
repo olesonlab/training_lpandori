@@ -29,4 +29,7 @@ output: html_document
 
 - folder = repo (repo is project folder)
 - git creates version history of repo
+- see git practice sandbox readme for more notes
+- don't commit data - put in gitignore
+
 
